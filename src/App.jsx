@@ -6,6 +6,8 @@ function App() {
 
   return (
     <>
+    <h1 className='display-3'>Calculadora Dólar</h1>
+    <img className='logo' src="/public/dollar.png" alt="" />
     </>
   )
 }
