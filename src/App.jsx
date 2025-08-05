@@ -1,18 +1,18 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { useState } from 'react'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import "./App.css";
+import Titulo from "./components/Titulo";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-    <h1 className='display-3'>Calculadora Dólar</h1>
-    <img className='logo' src="/public/dollar.png" alt="" />
-    <br />
-    <button className='btn btn-primary'>Click Aqui</button>
+      <div className="container">
+        <Titulo />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
