@@ -5,6 +5,7 @@ import "./App.css";
 import Titulo from "./components/Titulo";
 import Rodape from "./components/Rodape";
 import Menu from "./components/Menu";
+import Baner from './components/Baner'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,6 +15,7 @@ function App() {
       <div className="container">
         <Titulo />
         <Menu />
+        <Baner />
       </div>
       <Rodape />
     </>
