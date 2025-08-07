@@ -3,7 +3,10 @@ import style from "./Baner.module.scss";
 export default function Baner() {
   return (
     <>
-      <div id="carouselExampleIndicators" className={style.baner + " carousel slide"}>
+      <div
+        id="carouselExampleIndicators"
+        className={style.baner + " carousel slide"}
+      >
         <div className="carousel-indicators">
           <button
             type="button"
@@ -28,17 +31,29 @@ export default function Baner() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="/01.jpg" className={style.img + " d-block w-100"} alt="..." />
+            <img
+              src="/01.jpg"
+              className={style.img + " d-block w-100"}
+              alt="..."
+            />
           </div>
           <div className="carousel-item">
-            <img src="02.jpg" className={style.img + " d-block w-100"} alt="..." />
+            <img
+              src="02.jpg"
+              className={style.img + " d-block w-100"}
+              alt="..."
+            />
           </div>
           <div className="carousel-item">
-            <img src="03.jpg" className={style.img + " d-block w-100"} alt="..." />
+            <img
+              src="03.jpg"
+              className={style.img + " d-block w-100"}
+              alt="..."
+            />
           </div>
         </div>
         <button
-          className={style.botao + " carousel-control-prev"}
+          className={style.botaoPrev + " carousel-control-prev"}
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide="prev"
@@ -50,7 +65,7 @@ export default function Baner() {
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className={style.botao + " carousel-control-next"}
+          className={style.botaoNext + " carousel-control-next"}
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide="next"

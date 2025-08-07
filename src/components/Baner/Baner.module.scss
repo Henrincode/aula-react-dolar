@@ -10,11 +10,36 @@
   border-radius: 20px;
 }
 
-.botao {
-  opacity: 1 !important;
+.botaoPrev,
+.botaoNext {
+  opacity: 0.5 !important;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+.botaoPrev:hover .icone {
+  animation: botaoPrev infinite alternate 200ms ;
+}
+
+.botaoNext:hover .icone {
+  animation: botaoNext infinite alternate 200ms;
 }
 
 .icone {
   background-color: red;
   padding: 20px;
+  border-radius: 10px;
+}
+
+@keyframes botaoPrev {
+  to {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes botaoNext {
+  to {
+    transform: translateX(10px);
+  }
 }
