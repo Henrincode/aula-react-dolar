@@ -1,14 +1,15 @@
 import styles from "./CalcDollar.module.scss";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
 
 export default function CalcDollar() {
   const mensagem = function () {
     // alert("Bora");
-    const reais = document.querySelector('#reais').value
-    const cotacao = document.querySelector('#cotacao').value
+    const reais = document.querySelector("#reais").value;
+    const cotacao = document.querySelector("#cotacao").value;
 
-    const resultado = reais / cotacao
+    const resultado = reais / cotacao;
 
-    alert(`$${resultado.toFixed(2).replace('.',',')}`)
+    alert(`$${resultado.toFixed(2).replace(".", ",")}`);
   };
   return (
     <form className="w-25 m-auto pt-5 pb-5">
@@ -25,7 +26,7 @@ export default function CalcDollar() {
         onClick={mensagem}
         className="btn btn-primary w-100"
       >
-        Calcular
+        <FaMoneyBillTransfer size={20} color='white' /> Calcular
       </button>
     </form>
   );
