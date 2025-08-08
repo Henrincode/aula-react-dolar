@@ -6,11 +6,23 @@ export default function CalcDollar() {
     // alert("Bora");
     const reais = document.querySelector("#reais").value;
     const cotacao = document.querySelector("#cotacao").value;
+    const resultado = (reais / cotacao).toFixed(2).replace(".", ",");
 
-    const resultado = reais / cotacao;
+    if (!validarCampo(resultado)) {
+      return;
+    }
 
-    alert(`$${resultado.toFixed(2).replace(".", ",")}`);
+    alert(`O valor convertido para dólares é $${resultado}`);
   };
+
+  const validarCampo = (resultado) => {
+    if (isNaN(resultado) || Infinity || resultado.trim() == '') {
+      alert("ERRO! O campo deve estar preenchido somente com números");
+      return false;
+    }
+    return true;
+  };
+
   return (
     <form className="w-25 m-auto pt-5 pb-5">
       <div className="form-group mb-3">
@@ -26,7 +38,7 @@ export default function CalcDollar() {
         onClick={mensagem}
         className="btn btn-primary w-100"
       >
-        <FaMoneyBillTransfer size={20} color='white' /> Calcular
+        <FaMoneyBillTransfer size={20} color="white" /> Calcular
       </button>
     </form>
   );

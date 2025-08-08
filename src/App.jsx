@@ -1,25 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { useState } from "react";
 import "./App.css";
-import Titulo from "./components/Titulo";
-import Rodape from "./components/Rodape";
-import Menu from "./components/Menu";
-import Baner from "./components/Baner";
-import CalcDollar from "./components/CalcDollar";
+import Moeda from "./pages/Moeda";
+import Medida from "./pages/Medida";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="container">
-        <Titulo />
-        <Menu />
-        <Baner />
-        <CalcDollar />
-      </div>
-      <Rodape />
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Moeda />} />
+          <Route path="/medida" element={<Medida />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
