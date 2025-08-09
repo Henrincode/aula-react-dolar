@@ -1,4 +1,4 @@
-import style from "./Baner.module.scss";
+import style from "./Banner.module.scss";
 
 export default function Baner() {
   return (

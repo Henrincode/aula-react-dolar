@@ -2,25 +2,41 @@ import styles from "./CalcDollar.module.scss";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 
 export default function CalcDollar() {
+  // Faz o calculo
   const mensagem = function () {
-    // alert("Bora");
-    const reais = document.querySelector("#reais").value;
-    const cotacao = document.querySelector("#cotacao").value;
-    const resultado = (reais / cotacao).toFixed(2).replace(".", ",");
-
-    if (!validarCampo(resultado)) {
+    const seletorReais = document.querySelector("#reais");
+    const seletorCotacao = document.querySelector("#cotacao");
+    const seletorMenssagem = document.querySelector('#mensagem')
+    const reais = Number(seletorReais.value);
+    const cotacao = Number(seletorCotacao.value);
+    const resultado = reais / cotacao;
+    const resposta = (resultado).toFixed(2).replace(".", ",");
+    
+    // Valida os campos
+    if (validarCampo(seletorReais, seletorMenssagem)) {
+      return;
+    }
+    
+    if (validarCampo(seletorCotacao, seletorMenssagem)) {
       return;
     }
 
-    alert(`O valor convertido para dólares é $${resultado}`);
+    // Imprime menssagem
+    seletorMenssagem.innerText = `O valor convertido para dólares é $${resposta}`;
   };
 
-  const validarCampo = (resultado) => {
-    if (isNaN(resultado) || Infinity || resultado.trim() == '') {
-      alert("ERRO! O campo deve estar preenchido somente com números");
-      return false;
+  // Valida campos
+  const validarCampo = (seletor, mensagem) => {
+    const value = seletor.value
+    if (isNaN(value) || value == 0 || value == Infinity) {
+      seletor.classList.add('errado')
+      mensagem.classList.add('m-erro')
+      mensagem.innerText = 'Todos os campos devem estar preenchidos com números!'
+      return true;
     }
-    return true;
+    seletor.classList.remove('errado')
+    mensagem.classList.remove('m-erro')
+    return false;
   };
 
   return (
@@ -40,6 +56,7 @@ export default function CalcDollar() {
       >
         <FaMoneyBillTransfer size={20} color="white" /> Calcular
       </button>
+      <div id="menssagem" className="m-certo"></div>
     </form>
   );
 }

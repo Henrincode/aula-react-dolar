@@ -7,3 +7,19 @@
 .logo {
   width: 50px;
 }
+
+.errado {
+  border: solid 4px red;
+}
+
+.m-certo {
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 6px;
+  color: aliceblue;
+  background-color: green;
+}
+
+.m-erro {
+  background-color: red;
+}

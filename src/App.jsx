@@ -1,18 +1,26 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./App.css";
 import Moeda from "./pages/Moeda";
 import Medida from "./pages/Medida";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Sobre from "./pages/Sobre";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
     <>
       <BrowserRouter basename="/">
         <Routes>
-          <Route path="/" element={<Moeda />} />
-          <Route path="/medida" element={<Medida />} />
+          <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}></Route>
+            <Route path="/Moeda" element={<Moeda />} />
+            <Route path="/medida" element={<Medida />} />
+            <Route path="/sobre" element={<Sobre />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

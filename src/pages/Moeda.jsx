@@ -1,7 +1,7 @@
 import Titulo from "../components/Titulo";
 import Rodape from "../components/Rodape";
 import Menu from "../components/Menu";
-import Baner from "../components/Baner";
+import Banner from "../components/Banner";
 import CalcDollar from "../components/CalcDollar";
 
 export default function Moeda() {
@@ -10,7 +10,7 @@ export default function Moeda() {
       <div className="container">
         <Titulo titulo="Calculadora de Dólar" />
         <Menu />
-        {/* <Baner /> */}
+        {/* <Banner /> */}
         <CalcDollar />
       </div>
       <Rodape />
