@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 import NoPage from "./pages/NoPage";
 
-function App() {
+export default function App() {
   return (
     <>
       <BrowserRouter basename="/">
@@ -20,6 +20,7 @@ function App() {
             <Route path="/Moeda" element={<Moeda />} />
             <Route path="/medida" element={<Medida />} />
             <Route path="/sobre" element={<Sobre />} />
+            <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -27,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+// export default App;

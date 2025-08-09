@@ -6,14 +6,9 @@ import CalcMedida from "../components/CalcMedida";
 
 export default function Medida() {
   return (
-    <>
       <div className="container">
-        <Titulo titulo="Calculadora de medidas" />
-        <Menu />
-        {/* <Banner /> */}
+        <h1 className="display-5 text-center">Calculadora de Medida</h1>
         <CalcMedida />
       </div>
-      <Rodape />
-    </>
   );
 }

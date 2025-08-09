@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <>
       <div className="container">
-        <Titulo titulo="Calculadora de Dólar" />
+        <Titulo titulo="Calculadoras" />
         <Menu />
         <Banner />
         <Outlet />

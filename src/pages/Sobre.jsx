@@ -1,7 +1,6 @@
 export default function sobre() {
   return (
-    <>
-      <section>
+      <section className="container">
         <h1>Sobre o Projeto</h1>
 
         <p>
@@ -84,6 +83,5 @@ export default function sobre() {
           </li>
         </ul>
       </section>
-    </>
   );
 }

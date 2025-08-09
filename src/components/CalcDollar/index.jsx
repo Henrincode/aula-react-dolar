@@ -6,23 +6,23 @@ export default function CalcDollar() {
   const mensagem = function () {
     const seletorReais = document.querySelector("#reais");
     const seletorCotacao = document.querySelector("#cotacao");
-    const seletorMenssagem = document.querySelector('#mensagem')
+    const seletorMensagem = document.querySelector('#mensagem')
     const reais = Number(seletorReais.value);
     const cotacao = Number(seletorCotacao.value);
     const resultado = reais / cotacao;
     const resposta = (resultado).toFixed(2).replace(".", ",");
     
     // Valida os campos
-    if (validarCampo(seletorReais, seletorMenssagem)) {
+    if (validarCampo(seletorReais, seletorMensagem)) {
       return;
     }
     
-    if (validarCampo(seletorCotacao, seletorMenssagem)) {
+    if (validarCampo(seletorCotacao, seletorMensagem)) {
       return;
     }
 
-    // Imprime menssagem
-    seletorMenssagem.innerText = `O valor convertido para dólares é $${resposta}`;
+    // Imprime mensagem
+    seletorMensagem.innerText = `O valor convertido para dólares é $${resposta}`;
   };
 
   // Valida campos
@@ -56,7 +56,7 @@ export default function CalcDollar() {
       >
         <FaMoneyBillTransfer size={20} color="white" /> Calcular
       </button>
-      <div id="menssagem" className="m-certo"></div>
+      <div id="mensagem" className="m-certo"></div>
     </form>
   );
 }

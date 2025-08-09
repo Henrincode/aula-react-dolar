@@ -1,31 +1,37 @@
 import styles from "./CalcMedida.module.scss";
 import { Link } from "react-router-dom";
-import { FaMoneyBillTransfer } from "react-icons/fa6";
-import "../../functions/validarCampo";
+import { TbRulerMeasure } from "react-icons/tb";
 
-export default function CalcDollar() {
+export default function CalcMedida() {
+  
   // Centímetros para metros
   const centimetros = function () {
-    const centimetros = document.querySelector("#centimetros");
-    const resultado = (centimetros.value / 100).toFixed(2);
+    const seletorCentimetros = document.querySelector("#centimetros");
+    const seletorMensagem = document.querySelector("#mensagem1");
+    const centimetros = Number(seletorCentimetros.value)
+    const resultado = centimetros / 100
+    const resposta = (resultado).toFixed(2);
 
-    if (!validarCampo(resultado)) {
+    if (validarCampo(seletorCentimetros, seletorMensagem)) {
       return;
     }
 
-    alert(`O valor convertido para metros é ${resultado}m`);
+    seletorMensagem.innerText = `O valor convertido para metros é ${resposta}m`
   };
 
   // Metros para centímetros
   const metros = function () {
-    const metros = document.querySelector("#metros");
-    const resultado = (metros.value * 100).toFixed(2);
+    const seletorMetros = document.querySelector("#metros");
+    const seletorMensagem = document.querySelector("#mensagem2");
+    const metros =  Number(seletorMetros.value);
+    const resultado = metros * 100;
+    const resposta = (resultado).toFixed(2);
 
-    if (!validarCampo(resultado)) {
+    if (validarCampo(seletorMetros, seletorMensagem)) {
       return;
     }
 
-    alert(`O valor convertido para centímetros é ${resultado}cm`);
+    seletorMensagem.innerText = `O valor convertido para centímetros é ${resultado}cm`
   };
 
   // Valida campos
@@ -54,9 +60,9 @@ export default function CalcDollar() {
         onClick={centimetros}
         className="btn btn-primary w-100"
       >
-        <FaMoneyBillTransfer size={20} color="white" /> Calcular
+        <TbRulerMeasure size={20} color="white" /> Calcular
       </button>
-      <div id="menssagem1" className="m-certo"></div>
+      <div id="mensagem1" className="m-certo"></div>
 
       <br />
       <br />
@@ -67,9 +73,9 @@ export default function CalcDollar() {
         <input type="text" className="form-control" id="metros" />
       </div>
       <button type="button" onClick={metros} className="btn btn-primary w-100">
-        <FaMoneyBillTransfer size={20} color="white" /> Calcular
+        <TbRulerMeasure size={20} color="white" /> Calcular
       </button>
-      <div id="menssagem2" className="m-certo"></div>
+      <div id="mensagem2" className="m-certo"></div>
     </form>
   );
 }
